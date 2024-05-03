@@ -58,9 +58,9 @@ router.post(
     Get Feeds API endpoint: http://host/api/feeds/getFeeds/:appId
     method: GET
 */
-router.get('/getFeeds/:appId', async (req, res) => {
+router.get('/getFeeds', async (req, res) => {
 	try {
-		const { appId } = req.params;
+		const { appId } = req.query;
 
 		const snapshot = await fireStore
 			.collection('feeds')
